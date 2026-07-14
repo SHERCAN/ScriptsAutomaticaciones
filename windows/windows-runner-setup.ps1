@@ -109,9 +109,9 @@ $allOk = $true
 foreach ($check in $checks.Keys) {
     $result = & $checks[$check]
     if ($result) {
-        Write-Host "  ✅ $check: Instalado/Activo" -ForegroundColor Green
+        Write-Host "  ✅ ${check}: Instalado/Activo" -ForegroundColor Green
     } else {
-        Write-Host "  ⚠️  $check: No detectado en PATH (puede requerir reiniciar la consola)" -ForegroundColor Yellow
+        Write-Host "  ⚠️  ${check}: No detectado en PATH (puede requerir reiniciar la consola)" -ForegroundColor Yellow
         $allOk = $false
     }
 }
