@@ -59,3 +59,16 @@ Autentica con un registro de contenedores privado, realiza pull de las últimas 
     ```bash
     ./deploy.sh 192.168.1.10 registry.tu-dominio.com
     ```
+
+### 7. [`configure_firewall.sh`](./configure_firewall.sh)
+Detecta automáticamente el sistema de firewall activo en el VPS (UFW, Firewalld o iptables) y abre los puertos de red necesarios.
+*   **Caso de uso**: Apertura de puertos para el tráfico de la aplicación (HTTP/HTTPS, consola de administración, puertos MQTT con/sin TLS y salida SMTP para correos).
+*   **Uso**:
+    ```bash
+    # Si vienes de Windows, limpia saltos de línea (CRLF) y dale permisos:
+    tr -d '\r' < configure_firewall.sh > vps_firewall.sh
+    chmod +x vps_firewall.sh
+    # Ejecuta como superusuario:
+    sudo ./vps_firewall.sh
+    ```
+
